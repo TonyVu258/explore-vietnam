@@ -30,14 +30,17 @@
             <nav class="top-nav">
                 <div class="row">
                     <div class="nav-col">
-                        <div class="nav-hamburger"><i class="fa-solid fa-bars"></i></div>
+                        <div class="nav-hamburger"><i class="fa-solid fa-bars" onclick="hideMenu(false)"></i></div>
                     </div>
-                    <div class="nav-col animate__animated animate__slideInDown">
-                        <a href="#">Home</a>
-                        <a href="#">News</a>
-                        <a href="#">Tours</a>
-                        <a href="#">Pricing</a>
-                        <a href="#">Contact</a>
+                    <div class="nav-col nav-links" id="navLinks">
+                        <i class="fa-solid fa-xmark" onclick="hideMenu(true)"></i>
+                        <ul>
+                            <li><a href="#">Home</a>
+                            <li><a href="#">News</a></li>
+                            <li><a href="#">Tours</a></li>
+                            <li><a href="#">Pricing</a></li>
+                            <li><a href="#">Contact</a></li></li>
+                        </ul>
                     </div>
                     <div class="nav-col">
                         <i style="color: #436850;">LOGO</i>
@@ -194,6 +197,7 @@
                                 <img src="./img/ho-chi-minh.jpg" alt=""><img src="./img/ho-chi-minh.jpg" alt="">
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
@@ -204,6 +208,15 @@
     </main>
 
     <script>
+
+        var navLinks = document.getElementById("navLinks")
+        function hideMenu(isOpen) {
+            if (!isOpen) {
+                navLinks.style.left = '0';
+            } else {
+                navLinks.style.left = '-200px'
+            }
+        }
         //     var swiper = new Swiper(".mySwiper", {
         //   slidesPerView: "auto",
         //   loop: true,
