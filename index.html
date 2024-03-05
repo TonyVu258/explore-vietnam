@@ -19,6 +19,7 @@
 </head>
 
 <body>
+    <div id="myModal" class="modal-mobile"></div>
     <nav class="sidenav animate__animated animate__slideInLeft">
         <button class="button draw meet"><i class="fa-brands fa-facebook-f"></i></button>
         <button class="button draw meet"><i class="fa-brands fa-facebook-messenger"></i></button>
@@ -29,18 +30,32 @@
         <header>
             <nav class="top-nav">
                 <div class="row">
-                    <div class="nav-col">
-                        <div class="nav-hamburger"><i class="fa-solid fa-bars" onclick="hideMenu(false)"></i></div>
+                    <div class="nav-col nav-ham-btn">
+                        <div class="nav-hamburger">
+                            <i class="fa-solid fa-bars" onclick="hideMenu(false)"></i>
+                        </div>
                     </div>
-                    <div class="nav-col nav-links" id="navLinks">
-                        <i class="fa-solid fa-xmark" onclick="hideMenu(true)"></i>
-                        <ul>
-                            <li><a href="#">Home</a>
-                            <li><a href="#">News</a></li>
-                            <li><a href="#">Tours</a></li>
-                            <li><a href="#">Pricing</a></li>
-                            <li><a href="#">Contact</a></li></li>
-                        </ul>
+                    <div class="nav-col nav-links animate__animated animate__slideInDown" id="navLinks">
+                        <div class="nav-links-mobile">
+                            <i class="fa-solid fa-xmark" onclick="hideMenu(true)"></i>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">News</a></li>
+                                <li><a href="#">Tours</a></li>
+                                <li><a href="#">Pricing</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="social-icon-mobile">
+                            <div class="row">
+                                <button class="button draw meet"><i class="fa-brands fa-facebook-f"></i></button>
+                                <button class="button draw meet"><i class="fa-brands fa-facebook-messenger"></i></button>
+                            </div>
+                            <div class="row">
+                                <button class="button draw meet"><i class="fa-brands fa-youtube"></i></button>
+                                <button class="button draw meet"><i class="fa-solid fa-phone"></i></button>
+                            </div>
+                        </div>
                     </div>
                     <div class="nav-col">
                         <i style="color: #436850;">LOGO</i>
@@ -51,7 +66,7 @@
                 <h3>explore <span>Vietnam</span></h3>
             </div>
             <div class="container hero">
-                <div class="row ">
+                <div class="row">
                     <div class="hero-col animate__animated animate__zoomIn">
                         <h2><i class="fa-solid fa-mountain-sun"></i> Tours</h2>
                         <p>Embark on thrilling adventures, explore breathtaking landscapes, and create unforgettable
@@ -105,7 +120,8 @@
                     <div class="row">
                         <div class="travel-col">
                             <h2>Fall into travel</h2>
-                            <p>Going somewhere to celebrate this season? Whether you’re going home or somewhere to roam, we’ve got the travel tools to get you to your destination.</p>
+                            <p>Going somewhere to celebrate this season? Whether you’re going home or somewhere to roam,
+                                we’ve got the travel tools to get you to your destination.</p>
                         </div>
                         <div class="travel-col">
                             <button>See All</button>
@@ -115,7 +131,7 @@
                 <div class="places">
                     <div class="row">
                         <div class="places-col">
-                            <div> 
+                            <div>
                                 <h4>Ho Chi Minh </h4>
                                 <h5>Sleepless city</h5>
                                 <button class="">Book a Tour</button>
@@ -126,7 +142,7 @@
                                 <h4>Ho Chi Minh </h4>
                                 <h5>Sleepless city</h5>
                                 <button class="">Book a Tour</button>
-                                
+
                             </div>
                         </div>
                         <div class="places-col">
@@ -186,7 +202,9 @@
                                     </span>
                                 </div>
                             </div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque odit ipsa officiis tempore quisquam esse officia vero, assumenda, minima voluptates ipsum exercitationem ipsam repudiandae inventore totam eveniet natus eos pariatur.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque odit ipsa officiis tempore
+                                quisquam esse officia vero, assumenda, minima voluptates ipsum exercitationem ipsam
+                                repudiandae inventore totam eveniet natus eos pariatur.</p>
                             <button>Book Now</button>
                         </div>
                         <div class="details-img">
@@ -197,7 +215,7 @@
                                 <img src="./img/ho-chi-minh.jpg" alt=""><img src="./img/ho-chi-minh.jpg" alt="">
                             </div>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -209,12 +227,15 @@
 
     <script>
 
-        var navLinks = document.getElementById("navLinks")
+        var navLinks = document.getElementById("navLinks");
+        var modal = document.getElementById("myModal");
         function hideMenu(isOpen) {
             if (!isOpen) {
                 navLinks.style.left = '0';
+                modal.style.display = "block";
             } else {
-                navLinks.style.left = '-200px'
+                navLinks.style.left = '-200px';
+                modal.style.display = "none";
             }
         }
         //     var swiper = new Swiper(".mySwiper", {
