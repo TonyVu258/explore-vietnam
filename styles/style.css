@@ -255,7 +255,7 @@ header .nav-col:nth-child(2) a {
 	height: fit-content;
 	position: relative;
 	bottom: 0;
-	padding: 40px;
+	padding: 40px 30px;
 }
 
 
@@ -271,19 +271,28 @@ header .nav-col:nth-child(2) a {
     }
 
 	.nav-col .fa-bars{
+		display: block;
+		margin: 15px 0 0 15px;
+	}
+
+	.nav-col .fa-chevron-right{
 		position: fixed;
 		color: #ADBC9F;
+		top: 50%;
+	}
+
+	.nav-col .logo{
+		margin-right: 20px;
 	}
 
 	.nav-links {
         position: fixed;
-        /* background: rgba(67, 104, 80, 0.4); */
 		background: rgba(116, 226, 145, 0.9);
         height: 100vh;
         width: 200px;
         top: 0;
         left: -200px;
-        text-align: right;
+        text-align: center;
         z-index: 2;
         transition: 1s;
 		display: flex;
@@ -305,9 +314,40 @@ header .nav-col:nth-child(2) a {
         font-size: 22px;
         cursor: pointer;
 		padding: 20px;
+		text-align: right;
+	}
+
+	nav a:hover {
+		color: #fff;
+	}
+
+	nav a::after {
+		border-bottom: 2px solid #fff;
 	}
 
 	.social-icon-mobile {
+		display: block;
+	}
+
+	.social-icon-mobile .row:first-child {
+		margin-bottom: 20px;
+	}
+
+	.social-icon-mobile i{
+		padding: 18px;
+	}
+	.social-icon-mobile .button{
+		padding: 0;
+	}
+
+	.social-icon-mobile .meet:hover::before{
+		border-top-color: #fff;
+		border-right-color: #fff;
+	}
+	
+	.social-icon-mobile .meet:hover::after {
+		border-left-color: #fff;
+		border-bottom-color: #fff;
 	}
 
 	.nav-links ul {
@@ -315,7 +355,7 @@ header .nav-col:nth-child(2) a {
     }
 
 	.top-nav {
-		width: 85%;
+		width: 90%;
 	}
 
 	.sidenav button {
@@ -365,10 +405,6 @@ header .nav-col:nth-child(2) a {
 .contact-us{
 	margin: 100px auto;
 }
-/* 
-.travel {
-	max-height: 100vh;
-} */
 
 .about-us .row {
 	justify-content: space-between;
@@ -414,6 +450,7 @@ header .nav-col:nth-child(2) a {
 	margin-top: 30px;
 	background: none;
 }
+
 
 .green-btn:hover {
 	color: #436850;
@@ -676,4 +713,176 @@ header .nav-col:nth-child(2) a {
 		display: none;
 	}
 
+}
+
+
+.contact-us .row {
+	justify-content: space-between;
+	align-items: center;
+}
+
+.contact-us .contact-col {
+	flex-basis: 50%;
+}
+
+.contact-col div:first-child{
+	width: 75%;
+	margin: auto;
+	border: none;
+	background: #f6f9fa;
+	padding: 60px 0;
+	border-radius: 8px;
+	box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.2);
+
+}
+
+.contact-col h2,
+.contact-col p {
+	text-align: center;
+}
+
+.contact-col h2 {
+	font-weight: 600;
+	font-size: 40px;
+	color: #436850;
+}
+
+.contact-col p {
+	font-weight: 500;
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+
+.contact-col label {
+	font-weight: 500;
+	font-size: 23px;
+	text-transform: capitalize;
+}
+
+.contact-col input,
+.contact-col textarea {
+	border: #ADBC9F solid 2px;
+	border-radius: 5px;
+	padding: 5px;
+	background-color: #f6f9fa;
+	transition: 0.5s;
+  	outline: none;
+	resize: none;
+}
+
+.contact-col input:focus,
+.contact-col textarea:focus {
+	background-color: #fff;
+	border: #74E291 solid 2px;
+}
+
+.contact-col input{
+	height: 50px;
+}
+
+.contact-col input,
+.contact-col label,
+.contact-col textarea,
+.contact-col button {
+	display: block;
+	margin: 10px auto;
+	width: 70%;
+}
+
+.contact-col button {
+	margin-top: 50px;
+	padding: 10px 0;
+	font-size: 20px;
+	font-weight: 600;
+	color: #fff;
+	border-radius: 5px;
+	border: none;
+	background-color: #436850;
+	box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info [class^="fa"]{
+	color: #436850;
+}
+
+.contact-info [class^="fa"]::before {
+	display: inline-block;
+	width: 23px;
+}
+
+.contact-info {
+	width: 80%;
+	margin: auto;
+	font-size: 20px;
+}
+
+.contact-info ul li,
+footer ul li {
+	list-style-type: none;
+	margin: 10px 0;
+}
+
+footer ul {
+	padding: 0;
+}
+
+footer {
+	background-image: url(../img/wave.svg);
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	display: block;
+	height: 400px;
+	color: #ADBC9F;
+}
+
+footer .container {
+	height: inherit;
+}
+
+footer .row {
+	justify-content: space-between;
+	height: inherit;
+	align-items: flex-end;
+}
+
+.footer-col-logo {
+	flex-basis: 45%;
+	margin-bottom: 50px;
+}
+
+.footer-col-logo h2 {
+	font-size: 55px;
+	text-transform: uppercase;
+}
+
+.footer-col-logo p {
+	font-size: 30px;
+	font-style: italic;
+}
+
+.footer-col-info {
+	flex-basis: 55%;
+}
+.footer-col-info .row {
+	margin: 0;
+	justify-content: center;
+	align-items: center;
+}
+
+.footer-col {
+	flex-basis: 33%;
+}
+
+.footer-col h4 {
+	font-size: 26px;
+}
+
+.footer-col a {
+	color: #ADBC9F;
+}
+
+.footer-col a:hover {
+	color: #436850;
+	text-decoration: none;
 }
